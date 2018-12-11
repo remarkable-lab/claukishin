@@ -10,12 +10,19 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.4",
+    "@emotion/styled": "^10.0.4",
+    "emotion": "^10.0.4",
+    "emotion-server": "^10.0.4",
     "gatsby": "^2.0.33",
+    "gatsby-plugin-emotion": "^3.0.1",
     "react": "^16.5.1",
     "react-dom": "^16.5.1"
   },
   "devDependencies": {
-    "eslint": "^5.9.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-emotion": "^10.0.4",
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1"
