@@ -1,4 +1,8 @@
 module.exports = {
+  siteMetadata: {
+    title: `ClauKishin`,
+    subtitle: `Finanzas y mucho mas`
+  },
   pathPrefix: `/`,
   plugins: [
     {
