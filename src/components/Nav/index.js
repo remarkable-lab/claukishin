@@ -58,7 +58,6 @@ const noSelected = css`
 
 function Nav() {
   let { pathname } = window.location;
-  console.log(pathname, `${__PATH_PREFIX__}/`);
   pathname = pathname.trim();
 
   const rootPath = pathname === `${__PATH_PREFIX__}/`;
