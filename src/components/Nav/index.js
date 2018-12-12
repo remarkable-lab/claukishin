@@ -13,7 +13,8 @@ const container = css`
 `;
 
 const siteNav = css`
-  width: 100%;
+  width: 900px;
+  margin: auto;
   padding: 3px 0;
   display: flex;
   justify-content: space-between;
@@ -25,10 +26,13 @@ const siteNav = css`
   }
 `;
 
-const center = css`
+const linkBase = css`
   display: flex;
   justify-content: center;
   align-items: center;
+  :hover {
+    color: orange;
+  }
 `;
 
 const navList = css`
@@ -38,15 +42,18 @@ const navList = css`
   li {
     display: inline-block;
   }
+  li:not(:last-child) {
+    margin-right: 1em;
+  }
 `;
 
 const selected = css`
   color: red !important;
-  ${center};
+  ${linkBase};
 `;
 
 const noSelected = css`
-  ${center};
+  ${linkBase};
 `;
 
 function Nav() {
