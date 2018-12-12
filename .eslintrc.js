@@ -13,6 +13,9 @@ module.exports = {
     "browser": true,
     "node": true,
   },
+  globals: {
+    __PATH_PREFIX__: true
+  },
   plugins: ["prettier"],
   rules: {
     "prettier/prettier": "error",
@@ -36,5 +39,6 @@ module.exports = {
     "import/prefer-default-export": 0,
     "import": 0,
     "space-before-function-paren": 0,
+    "react/forbid-prop-types": 0,
   }
 }
