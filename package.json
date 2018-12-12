@@ -15,6 +15,7 @@
     "emotion-server": "^10.0.4",
     "gatsby": "^2.0.33",
     "gatsby-plugin-emotion": "^3.0.1",
+    "prop-types": "^15.6.2",
     "react": "^16.5.1",
     "react-dom": "^16.5.1"
   },
