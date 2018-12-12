@@ -1,5 +1,6 @@
 import React from "react";
 import Nav from "./Nav";
+import Footer from "./Footer";
 import "../styles/app.css";
 import "../styles/reboot.css";
 
@@ -14,7 +15,7 @@ function Layout(props) {
         </div>
       </div>
       <div style={{ flexShrink: 0 }}>
-        <h6>Footer</h6>
+        <Footer />
       </div>
     </div>
   );
