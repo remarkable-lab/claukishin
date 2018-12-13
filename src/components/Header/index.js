@@ -1,5 +1,6 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
+import { css } from "@emotion/core";
 
 function Header() {
   return (
@@ -14,11 +15,14 @@ function Header() {
           }
         }
       `}
-      render={site => {
-        const { siteMetadata } = site;
-        const { title, subtitle } = siteMetadata;
+      render={({ site }) => {
+        const { title, subtitle } = site.siteMetadata;
         return (
-          <header>
+          <header
+            css={css`
+              background-color: blue;
+            `}
+          >
             <div>
               <div>
                 <div>
