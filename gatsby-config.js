@@ -14,6 +14,14 @@ module.exports = {
         labelFormat: "[local]",
         cssPropOptimization: true
       }
-    }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/`,
+        name: "post"
+      }
+    },
+    `gatsby-transformer-remark`
   ]
 };
