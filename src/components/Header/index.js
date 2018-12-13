@@ -21,6 +21,7 @@ function Header() {
           <header
             css={css`
               background-color: blue;
+              height: 100%;
             `}
           >
             <div>

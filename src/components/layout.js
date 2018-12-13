@@ -1,10 +1,11 @@
 import React from "react";
+import { css } from "@emotion/core";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import "../styles/app.css";
 import "../styles/reboot.css";
 
-function Layout(props) {
+export default function Layout(props) {
   const { children } = props;
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
@@ -21,4 +22,16 @@ function Layout(props) {
   );
 }
 
-export default Layout;
+export const Content = ({ children }) => (
+  <div>
+    <div
+      css={css`
+        max-width: 900px;
+        margin: auto;
+        background-color: #b7b3b3;
+      `}
+    >
+      {children}
+    </div>
+  </div>
+);
