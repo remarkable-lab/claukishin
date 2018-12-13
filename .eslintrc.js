@@ -40,5 +40,6 @@ module.exports = {
     "import": 0,
     "space-before-function-paren": 0,
     "react/forbid-prop-types": 0,
+    "react/prop-types": [2, { ignore: ['children'] }],
   }
 }
