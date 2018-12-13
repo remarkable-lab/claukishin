@@ -1,8 +1,33 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, graphql, StaticQuery } from "gatsby";
 import { css } from "@emotion/core";
 import Layout, { Content } from "../components/layout";
 import Header from "../components/Header";
+
+const queryPosts = graphql`
+  query {
+    allMarkdownRemark(
+      limit: 100
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date
+            tags
+          }
+          excerpt
+          timeToRead
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default () => (
   <Layout>
@@ -31,17 +56,32 @@ export default () => (
           <header>
             <h3>Blog posts</h3>
           </header>
-          <ul>
-            <li>
-              <article>Post 1</article>
-            </li>
-            <li>
-              <article>Post 2</article>
-            </li>
-            <li>
-              <article>Post 3</article>
-            </li>
-          </ul>
+          <StaticQuery
+            query={queryPosts}
+            render={({ allMarkdownRemark }) => {
+              const { edges } = allMarkdownRemark;
+              return (
+                <ul>
+                  {edges.map(({ node }) => {
+                    console.log(node);
+                    return (
+                      <li key={node.id}>
+                        <article>
+                          <header>
+                            <h3>
+                              <Link to={node.fields.slug}>
+                                {node.frontmatter.title}
+                              </Link>
+                            </h3>
+                          </header>
+                        </article>
+                      </li>
+                    );
+                  })}
+                </ul>
+              );
+            }}
+          />
         </section>
         <aside>
           <section>
