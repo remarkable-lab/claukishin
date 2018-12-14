@@ -22,6 +22,12 @@ module.exports = {
         name: "post"
       }
     },
-    `gatsby-transformer-remark`
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `hans.lebon`
+      }
+    }
   ]
 };
