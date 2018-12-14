@@ -3,6 +3,7 @@ import { Link, graphql, StaticQuery } from "gatsby";
 import { css } from "@emotion/core";
 import Layout, { Content } from "../components/layout";
 import Header from "../components/Header";
+import Aside from "../components/Aside";
 
 const queryPosts = graphql`
   query {
@@ -85,13 +86,7 @@ export default () => (
             }}
           />
         </section>
-        <aside>
-          <section>
-            <header>
-              <h3>Aside</h3>
-            </header>
-          </section>
-        </aside>
+        <Aside />
       </main>
     </Content>
   </Layout>
