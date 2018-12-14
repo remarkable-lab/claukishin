@@ -7,16 +7,18 @@ import Header from "../components/Header";
 const queryPosts = graphql`
   query {
     allMarkdownRemark(
-      limit: 100
+      filter: { frontmatter: { public: { eq: true } } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {
         node {
-          id
+          html
           frontmatter {
             title
             date
             tags
+            public
+            author
           }
           excerpt
           timeToRead
@@ -91,7 +93,6 @@ export default () => (
           </section>
         </aside>
       </main>
-      <Link to="/contacto">Contacto</Link>
     </Content>
   </Layout>
 );
