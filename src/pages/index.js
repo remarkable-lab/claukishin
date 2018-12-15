@@ -66,7 +66,7 @@ export default () => (
               return (
                 <ul>
                   {edges.map(({ node }) => (
-                    <li key={node.id}>
+                    <li key={node.fields.slug}>
                       <article>
                         <header>
                           <h3>
@@ -74,6 +74,7 @@ export default () => (
                               {node.frontmatter.title}
                             </Link>
                           </h3>
+                          <p>{node.excerpt}</p>
                         </header>
                       </article>
                     </li>
