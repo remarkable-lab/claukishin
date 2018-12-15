@@ -42,7 +42,7 @@ function Aside() {
         }
       `}
     >
-      <section>
+      <section key="about">
         <article>
           <header>
             <h3>ClauKishin</h3>
@@ -54,17 +54,11 @@ function Aside() {
           </header>
         </article>
       </section>
-      <section>
+      <section key="tags">
         <h3>Tags</h3>
       </section>
-      <br
-        css={css`
-          width: 100%;
-          height: 2px;
-          background-color: gray;
-        `}
-      />
       <section
+        key="instagram"
         css={css`
           width: 100%;
           background-color: white;
@@ -97,28 +91,25 @@ function Aside() {
             query={query}
             render={({ allInstaNode }) => {
               const { edges } = allInstaNode;
-              return edges.map(({ node }) => {
-                console.log("node", node.id, node.localFile);
-                return (
-                  <li
-                    key={node.id}
-                    css={css`
-                      box-shadow: 0 2px 5px #cacaca;
-                    `}
+              return edges.map(({ node }) => (
+                <li
+                  key={node.id}
+                  css={css`
+                    box-shadow: 0 2px 5px #cacaca;
+                  `}
+                >
+                  <a
+                    href={`https://www.instagram.com/p/${node.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <a
-                      href={`https://www.instagram.com/p/${node.id}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Img
-                        css={css``}
-                        fluid={node.localFile.childImageSharp.fluid}
-                      />
-                    </a>
-                  </li>
-                );
-              });
+                    <Img
+                      css={css``}
+                      fluid={node.localFile.childImageSharp.fluid}
+                    />
+                  </a>
+                </li>
+              ));
             }}
           />
         </ul>
