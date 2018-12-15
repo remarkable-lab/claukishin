@@ -65,22 +65,19 @@ export default () => (
               const { edges } = allMarkdownRemark;
               return (
                 <ul>
-                  {edges.map(({ node }) => {
-                    console.log(node);
-                    return (
-                      <li key={node.id}>
-                        <article>
-                          <header>
-                            <h3>
-                              <Link to={node.fields.slug}>
-                                {node.frontmatter.title}
-                              </Link>
-                            </h3>
-                          </header>
-                        </article>
-                      </li>
-                    );
-                  })}
+                  {edges.map(({ node }) => (
+                    <li key={node.id}>
+                      <article>
+                        <header>
+                          <h3>
+                            <Link to={node.fields.slug}>
+                              {node.frontmatter.title}
+                            </Link>
+                          </h3>
+                        </header>
+                      </article>
+                    </li>
+                  ))}
                 </ul>
               );
             }}
