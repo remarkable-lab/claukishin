@@ -26,9 +26,9 @@ export const Content = ({ children }) => (
   <div>
     <div
       css={css`
-        max-width: 900px;
+        max-width: 1000px;
         margin: auto;
-        background-color: #b7b3b3;
+        background-color: white;
       `}
     >
       {children}
