@@ -7,18 +7,21 @@ const container = css`
   min-height: 45px;
   padding: 3px 0;
   width: 100%;
-  background-color: gray;
+  position: absolute;
+  background-color: transparent;
   a {
     color: white;
   }
 `;
 
 const siteNav = css`
+  position: absolute;
   width: 100%;
   margin: auto;
   padding: 3px 0;
   display: flex;
   justify-content: space-between;
+  background: transparent;
   div,
   ul {
     display: flex;
