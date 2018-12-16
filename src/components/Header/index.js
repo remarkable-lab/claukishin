@@ -2,6 +2,34 @@ import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { css } from "@emotion/core";
 
+const heroStyle = css`
+  width: 100%;
+  padding: 10rem 1rem 4rem 1rem;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  transform-style: preserve-3d;
+  background: linear-gradient(to right, #f953c6, #b91d73);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  height: 40%;
+  opacity: 1;
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  @media only screen and (max-device-width: 1366px) {
+    .parallax {
+      background-attachment: scroll;
+    }
+  }
+`;
+
 function Header() {
   return (
     <StaticQuery
@@ -18,12 +46,7 @@ function Header() {
       render={({ site }) => {
         const { title, subtitle } = site.siteMetadata;
         return (
-          <header
-            css={css`
-              background-color: blue;
-              height: 100%;
-            `}
-          >
+          <header css={heroStyle}>
             <div>
               <div>
                 <div>
