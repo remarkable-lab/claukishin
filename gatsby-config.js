@@ -31,6 +31,7 @@ module.exports = {
     },
     // for gatsby image
     "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp"
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-netlify-cms"
   ]
 };
