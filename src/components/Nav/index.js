@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import { Location } from "@reach/router";
 import { css } from "@emotion/core";
 import { Content } from "../layout";
 
@@ -61,7 +62,7 @@ const noSelected = css`
 `;
 
 function Nav() {
-  let { pathname } = window.location;
+  let { pathname } = location;
   pathname = pathname.trim();
 
   const rootPath = pathname === `${__PATH_PREFIX__}/`;
