@@ -4,6 +4,7 @@ import { css } from "@emotion/core";
 import Layout, { Content } from "../components/layout";
 import Header from "../components/Header";
 import Aside from "../components/Aside";
+import { getDate } from "../helper";
 
 const queryPosts = graphql`
   query {
@@ -41,12 +42,13 @@ export default () => (
           width: 100%;
           display: flex;
           flex-wrap: wrap;
+          margin-bottom: 2rem;
           section,
           aside {
             width: 100%;
           }
           @media (min-width: 700px) {
-            section {
+            & section {
               width: 70%;
             }
             aside {
@@ -69,13 +71,35 @@ export default () => (
                     <li key={node.fields.slug}>
                       <article>
                         <header>
-                          <h3>
+                          <h3
+                            css={css`
+                              font-size: 23px;
+                            `}
+                          >
                             <Link to={node.fields.slug}>
                               {node.frontmatter.title}
                             </Link>
                           </h3>
-                          <p>{node.excerpt}</p>
+                          <small>
+                            <span
+                              css={css`
+                                margin-right: 0.5rem;
+                              `}
+                            >
+                              {getDate(node.frontmatter.date)}
+                            </span>
+                            🗸📖☕
+                            <span
+                              css={css`
+                                margin-left: 0.3rem;
+                              `}
+                            >
+                              {node.timeToRead}
+                            </span>
+                            min de lectura
+                          </small>
                         </header>
+                        <p>{node.excerpt}</p>
                       </article>
                     </li>
                   ))}
