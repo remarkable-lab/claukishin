@@ -4,10 +4,13 @@ import { css } from "@emotion/core";
 import { Content } from "../layout";
 
 const container = css`
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
   min-height: 45px;
   padding: 3px 0;
   width: 100%;
-  position: absolute;
   background-color: transparent;
   a {
     color: white;
@@ -62,7 +65,6 @@ const noSelected = css`
 
 function Nav({ location }) {
   let { pathname } = location;
-  console.log("location", location.pathname);
   pathname = pathname.trim();
 
   const rootPath = pathname === `${__PATH_PREFIX__}/`;
@@ -73,28 +75,26 @@ function Nav({ location }) {
         ${!rootPath && `background-color: blue`};
       `}
     >
-      <Content>
-        <nav css={siteNav}>
-          <div>
-            <Link to="/">Home</Link>
-          </div>
-          <ul css={navList}>
-            <li>
-              <Link
-                to="/contacto"
-                css={pathname === "/contacto" ? selected : noSelected}
-              >
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link to="/me" css={pathname === "/me" ? selected : noSelected}>
-                About
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </Content>
+      <nav css={siteNav}>
+        <div>
+          <Link to="/">Home</Link>
+        </div>
+        <ul css={navList}>
+          <li>
+            <Link
+              to="/contacto"
+              css={pathname === "/contacto" ? selected : noSelected}
+            >
+              Contact
+            </Link>
+          </li>
+          <li>
+            <Link to="/me" css={pathname === "/me" ? selected : noSelected}>
+              About
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 }

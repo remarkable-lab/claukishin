@@ -36,6 +36,7 @@ function Aside() {
     <aside
       css={css`
         padding: 1em;
+        border: 1px dashed gray;
         background-color: white;
         section {
           width: 100%;
@@ -53,9 +54,6 @@ function Aside() {
             </p>
           </header>
         </article>
-      </section>
-      <section key="tags">
-        <h3>Tags</h3>
       </section>
       <section
         key="instagram"
@@ -75,11 +73,11 @@ function Aside() {
             flex: wrap;
             flex-wrap: wrap;
             li {
-              width: calc((100% / 2) - 7.5px);
-              min-width: 100px;
+              width: calc((100% / 3) - 7.5px);
+              min-width: 50px;
               margin-bottom: 5px;
             }
-            li:nth-child(2n) {
+            li:nth-child(3n) {
               margin: 0 5px 5px;
             }
             li:nth-child(1n) {

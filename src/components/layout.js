@@ -30,12 +30,17 @@ export default function Layout(props) {
 }
 
 export const Content = ({ children }) => (
-  <div>
+  <div
+    css={css`
+      width: 100%;
+    `}
+  >
     <div
       css={css`
-        max-width: 1000px;
+        max-width: 960px;
+        height: 100%;
         margin: auto;
-        background-color: white;
+        padding: 0 7px;
       `}
     >
       {children}

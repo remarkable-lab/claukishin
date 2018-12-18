@@ -4,7 +4,8 @@ import { css } from "@emotion/core";
 
 const heroStyle = css`
   width: 100%;
-  padding: 10rem 1rem 4rem 1rem;
+  padding: 8rem 1rem 5rem 1rem;
+  margin-bottom: 3rem;
   justify-content: center;
   overflow: hidden;
   position: relative;
