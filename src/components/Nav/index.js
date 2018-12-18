@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Location } from "@reach/router";
 import { css } from "@emotion/core";
 import { Content } from "../layout";
 
@@ -61,8 +60,9 @@ const noSelected = css`
   ${linkBase};
 `;
 
-function Nav() {
+function Nav({ location }) {
   let { pathname } = location;
+  console.log("location", location.pathname);
   pathname = pathname.trim();
 
   const rootPath = pathname === `${__PATH_PREFIX__}/`;
