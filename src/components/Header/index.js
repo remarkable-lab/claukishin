@@ -1,6 +1,7 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { css } from "@emotion/core";
+import BgHero from "../../assets/images/hero.MozJPEG.jpg";
 
 const heroStyle = css`
   width: 100%;
@@ -11,9 +12,11 @@ const heroStyle = css`
   position: relative;
   text-align: center;
   transform-style: preserve-3d;
-  background: linear-gradient(to right, #f953c6, #b91d73);
+  background: linear-gradient(rgba(210, 66, 210, 0.8), rgba(139, 63, 158, 0.8)),
+    url(${BgHero}) no-repeat bottom;
   background-attachment: fixed;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
   color: white;
   height: 40%;
@@ -24,11 +27,6 @@ const heroStyle = css`
   bottom: 0;
   left: 0;
   z-index: -1;
-  @media only screen and (max-device-width: 1366px) {
-    .parallax {
-      background-attachment: scroll;
-    }
-  }
 `;
 
 function Header() {
