@@ -71,7 +71,7 @@ function Nav({ location }) {
     <div
       css={css`
         ${container};
-        ${!rootPath && `background-color: blue`};
+        ${!rootPath && `background-color: rgba(210, 66, 210, 1)`};
       `}
     >
       <Content>
