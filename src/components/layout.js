@@ -29,7 +29,7 @@ export default function Layout(props) {
   );
 }
 
-export const Content = ({ children }) => (
+export const Content = ({ children, maxWidth = "960px" }) => (
   <div
     css={css`
       width: 100%;
@@ -37,7 +37,7 @@ export const Content = ({ children }) => (
   >
     <div
       css={css`
-        max-width: 960px;
+        max-width: ${maxWidth};
         height: 100%;
         margin: auto;
         padding: 0 7px;
