@@ -59,7 +59,7 @@ export default () => (
       >
         <section>
           <header>
-            <h3>Blog posts</h3>
+            <h3>Mis ultimos posts</h3>
           </header>
           <StaticQuery
             query={queryPosts}
