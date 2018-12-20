@@ -18,7 +18,6 @@ const container = css`
 `;
 
 const siteNav = css`
-  position: absolute;
   width: 100%;
   margin: auto;
   padding: 3px 0;
@@ -75,26 +74,28 @@ function Nav({ location }) {
         ${!rootPath && `background-color: blue`};
       `}
     >
-      <nav css={siteNav}>
-        <div>
-          <Link to="/">Home</Link>
-        </div>
-        <ul css={navList}>
-          <li>
-            <Link
-              to="/contacto"
-              css={pathname === "/contacto" ? selected : noSelected}
-            >
-              Contact
-            </Link>
-          </li>
-          <li>
-            <Link to="/me" css={pathname === "/me" ? selected : noSelected}>
-              About
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <Content>
+        <nav css={siteNav}>
+          <div>
+            <Link to="/">Home</Link>
+          </div>
+          <ul css={navList}>
+            <li>
+              <Link
+                to="/contacto"
+                css={pathname === "/contacto" ? selected : noSelected}
+              >
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link to="/me" css={pathname === "/me" ? selected : noSelected}>
+                About
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </Content>
     </div>
   );
 }

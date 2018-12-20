@@ -20,8 +20,12 @@ function Footer() {
   return (
     <footer
       css={css`
-        background-color: white;
-        border-top: 1px solid black;
+        font-size: 0.9rem;
+        padding: 1rem 0;
+        color: #484848;
+        background: white;
+        background: linear-gradient(to right, white, white);
+        border-top: 1px solid #e8e8e8;
       `}
     >
       <Content>
@@ -53,7 +57,7 @@ function Footer() {
           </div>
           <div>
             Claudia Flores
-            <span style={{ color: "gray" }}>|</span>
+            <span style={{ color: "#b91d73", margin: "0 0.4rem" }}>|</span>
             Finanzas
           </div>
         </div>

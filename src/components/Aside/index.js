@@ -38,6 +38,7 @@ function Aside() {
         padding: 1em;
         border: 1px dashed gray;
         background-color: white;
+        box-shadow: 0 2px 6px #b5b5b5;
         section {
           width: 100%;
         }
