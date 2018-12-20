@@ -1,7 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
 import PropTypes from "prop-types";
+import { css } from "@emotion/core";
 import Layout, { Content } from "../components/layout";
+import { getDate } from "../helper";
 
 export default function BlogPost(props) {
   const { data, pageContext } = props;
@@ -9,9 +11,39 @@ export default function BlogPost(props) {
   const post = data.markdownRemark;
   return (
     <Layout>
-      <Content>
+      <Content maxWidth="700px">
         <article>
-          <h1>{post.frontmatter.title}</h1>
+          <header
+            css={css`
+              margin-bottom: 1rem;
+            `}
+          >
+            <h1
+              css={css`
+                font-size: 30px;
+              `}
+            >
+              {post.frontmatter.title}
+            </h1>
+            <small>
+              <span
+                css={css`
+                  margin-right: 0.5rem;
+                `}
+              >
+                {getDate(post.frontmatter.date)}
+              </span>
+              🗸📖☕
+              <span
+                css={css`
+                  margin-left: 0.3rem;
+                `}
+              >
+                {post.timeToRead}
+              </span>
+              min de lectura
+            </small>
+          </header>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </article>
       </Content>
