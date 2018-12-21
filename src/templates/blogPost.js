@@ -15,7 +15,7 @@ export default function BlogPost(props) {
         <article>
           <header
             css={css`
-              margin-bottom: 1rem;
+              margin: 2rem 0;
             `}
           >
             <h1
