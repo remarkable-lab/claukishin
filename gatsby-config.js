@@ -22,7 +22,6 @@ module.exports = {
         name: "post"
       }
     },
-    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-instagram`,
       options: {
@@ -31,7 +30,25 @@ module.exports = {
     },
     // for gatsby image
     "gatsby-plugin-sharp",
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-responsive-iframe`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              showCaptions: true,
+              wrapperStyle: `
+                margin: 3px solid red
+              `
+            }
+          }
+        ]
+      }
+    },
     "gatsby-transformer-sharp",
-    "gatsby-plugin-netlify-cms"
+    "gatsby-plugin-netlify-cms",
+    `gatsby-plugin-react-helmet`
   ]
 };
