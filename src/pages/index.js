@@ -73,7 +73,7 @@ export default () => (
                         <header>
                           <h3
                             css={css`
-                              font-size: 23px;
+                              font-size: 26px;
                             `}
                           >
                             <Link to={node.fields.slug}>
