@@ -8,8 +8,10 @@ const container = css`
   left: 0;
   right: 0;
   top: 0;
-  min-height: 45px;
-  padding: 3px 0;
+  min-height: 44px;
+  padding: 0;
+  border-bottom-width: 2px;
+  line-height: 44px;
   width: 100%;
   background-color: transparent;
   a {
@@ -20,7 +22,6 @@ const container = css`
 const siteNav = css`
   width: 100%;
   margin: auto;
-  padding: 3px 0;
   display: flex;
   justify-content: space-between;
   background: transparent;
@@ -36,8 +37,11 @@ const linkBase = css`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: font-size 300ms, color 300ms;
   :hover {
-    color: orange;
+    color: #d8d8d8;
+    font-size: 1.1rem;
+    transition: font-size 300ms, color 300ms;
   }
 `;
 
@@ -54,7 +58,7 @@ const navList = css`
 `;
 
 const selected = css`
-  color: red !important;
+  color: #d8d8d8 !important;
   ${linkBase};
 `;
 
@@ -72,7 +76,8 @@ function Nav({ location }) {
       css={css`
         ${container};
         ${!rootPath &&
-          `position: relative; background-color: rgba(210, 66, 210, 1)`};
+          `position: relative;
+          background: linear-gradient(to left, rgba(210, 66, 210, 1), rgba(139, 63, 158, 1))`};
       `}
     >
       <Content>
