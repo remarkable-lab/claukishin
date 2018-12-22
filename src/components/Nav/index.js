@@ -85,7 +85,7 @@ function Nav({ location }) {
           <div>
             <Link to="/">Clau</Link>
           </div>
-          <ul css={navList}>
+          {/* <ul css={navList}>
             <li>
               <Link
                 to="/contacto"
@@ -99,7 +99,7 @@ function Nav({ location }) {
                 About
               </Link>
             </li>
-          </ul>
+          </ul> */}
         </nav>
       </Content>
     </div>
