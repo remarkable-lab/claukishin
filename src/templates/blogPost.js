@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import PropTypes from "prop-types";
 import { css } from "@emotion/core";
 import Layout, { Content } from "../components/layout";
@@ -8,6 +8,7 @@ import { getDate } from "../helper";
 export default function BlogPost(props) {
   const { data, pageContext } = props;
   const { prev, next } = pageContext;
+  console.log(prev, next);
   const post = data.markdownRemark;
   return (
     <Layout>
@@ -61,6 +62,59 @@ export default function BlogPost(props) {
             `}
           />
         </article>
+        <br />
+        {(prev && prev.frontmatter.public) ||
+        (next && next.frontmatter.public) ? (
+          <section
+            css={css`
+              background-color: white;
+              padding: 1rem;
+              margin: 2rem 0;
+              border: 2px dashed #c641c9;
+              box-shadow: 0 2px 2px #e6e6e6;
+              transition: box-shadow 300ms;
+              &:hover {
+                box-shadow: 0 2px 15px #e6e6e6;
+                transition: box-shadow 300ms;
+              }
+              ,
+              & a {
+                color: gray;
+              }
+            `}
+          >
+            <ul>
+              {prev && (
+                <li>
+                  <span
+                    role="img"
+                    aria-label="back"
+                    css={css`
+                      margin-right: 8px;
+                    `}
+                  >
+                    ⬅️
+                  </span>
+                  <Link to={prev.fields.slug}>{prev.frontmatter.title}</Link>
+                </li>
+              )}
+              {next && (
+                <li>
+                  <span
+                    role="img"
+                    aria-label="foward"
+                    css={css`
+                      margin-right: 20px;
+                    `}
+                  >
+                    ➡️
+                  </span>
+                  <Link to={next.fields.slug}>{next.frontmatter.title}</Link>
+                </li>
+              )}
+            </ul>
+          </section>
+        ) : null}
       </Content>
     </Layout>
   );
