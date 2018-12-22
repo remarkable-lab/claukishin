@@ -11,7 +11,7 @@ export default function BlogPost(props) {
   const post = data.markdownRemark;
   return (
     <Layout>
-      <Content maxWidth="700px">
+      <Content maxWidth="600px">
         <article>
           <header
             css={css`
@@ -44,7 +44,22 @@ export default function BlogPost(props) {
               min de lectura
             </small>
           </header>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          <div
+            dangerouslySetInnerHTML={{ __html: post.html }}
+            css={css`
+              & p {
+                width: 100%;
+              }
+              & img {
+                display: flex;
+                width: 100%;
+                max-width: 500px;
+                height: auto;
+                margin: auto;
+                box-shadow: 0 2px 20px #d4d3d3;
+              }
+            `}
+          />
         </article>
       </Content>
     </Layout>
