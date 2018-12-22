@@ -1,7 +1,7 @@
 ---
 title: "Segundo post👋"
 date: "2017-12-02"
-public: false
+public: true
 author: "Clau"
 tags: ["blog", "second"]
 ---
