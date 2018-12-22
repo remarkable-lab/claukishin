@@ -19,4 +19,4 @@ texto de ejemplo despues de la imagen
 
 Siguendo con las pruebas, ahora un enlace 
 
-<iframe src="https://www.youtube.com/watch?v=QR_stgHKkec" width="600" height="400"></iframe>
+<iframe src="https://www.youtube.com/embed/QR_stgHKkec" width="600" height="400"></iframe>
