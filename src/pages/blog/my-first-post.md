@@ -15,9 +15,8 @@ texto de ejemplo despues de la imagen
 
 > Como diria marcus, es que se me atoro 
 >
-> \
->
->
 > oigame
 
-Siguendo con las pruebas, ahora un enlace <https://www.youtube.com/watch?v=dZzeEwxMVXg>
+Siguendo con las pruebas, ahora un enlace 
+
+<iframe src="https://www.youtube.com/watch?v=QR_stgHKkec" width="600" height="400"></iframe>
