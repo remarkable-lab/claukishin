@@ -83,13 +83,19 @@ export default function BlogPost(props) {
                 box-shadow: 0 2px 15px #e6e6e6;
                 transition: box-shadow 300ms;
               }
-              ,
               & a {
                 color: gray;
+                &:hover {
+                  color: #383737;
+                }
               }
             `}
           >
-            <ul>
+            <ul
+              css={css`
+                margin-bottom: 0;
+              `}
+            >
               {prev && (
                 <li>
                   <span
@@ -110,7 +116,7 @@ export default function BlogPost(props) {
                     role="img"
                     aria-label="foward"
                     css={css`
-                      margin-right: 20px;
+                      margin-right: 8px;
                     `}
                   >
                     ➡️
