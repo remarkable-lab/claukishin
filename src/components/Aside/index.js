@@ -94,7 +94,13 @@ function Aside() {
                 <li
                   key={node.id}
                   css={css`
-                    box-shadow: 0 2px 5px #cacaca;
+                    box-shadow: 0 1px 4px #cacaca;
+                    transition: transform 300ms;
+                    &:hover {
+                      box-shadow: 0 2px 8px #cacaca;
+                      transform: scale(1.06);
+                      transition: transform 300ms;
+                    }
                   `}
                 >
                   <a
