@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import PropTypes from "prop-types";
+import { DiscussionEmbed } from "disqus-react";
 import { css } from "@emotion/core";
 import Layout, { Content } from "../components/layout";
 import { getDate } from "../helper";
@@ -10,6 +11,11 @@ export default function BlogPost(props) {
   const { prev, next } = pageContext;
   console.log(prev, next);
   const post = data.markdownRemark;
+  const disqusShortname = "hansgarcia";
+  const disqusConfig = {
+    identifier: post.fields.slug,
+    title: post.frontmatter.title
+  };
   return (
     <Layout>
       <Content maxWidth="600px">
@@ -115,6 +121,9 @@ export default function BlogPost(props) {
             </ul>
           </section>
         ) : null}
+        <section>
+          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+        </section>
       </Content>
     </Layout>
   );
