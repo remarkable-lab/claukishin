@@ -21,8 +21,6 @@ Siguendo con las pruebas, ahora un enlace de video
 
 <iframe src="https://www.youtube.com/embed/QR_stgHKkec" width="600" height="400"></iframe>
 
-
-
 Un salto de linea, ahora insertare un enlace [hanslebon.com](hanslebon.com), despues hare una lista
 
 * Primer valor
@@ -40,3 +38,5 @@ Lista Numerica:
 Ahora este parrafo tambien es de **prueba**  asi que por ahora veremos como podemos arreglar esto
 
 pero pienso que _puede ser asi_.
+
+ 😜 I love emoji
