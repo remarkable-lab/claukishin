@@ -2,6 +2,7 @@ import React from "react";
 import { Link, graphql, StaticQuery } from "gatsby";
 import { css } from "@emotion/core";
 import Layout, { Content } from "../components/layout";
+import SEO from "../components/Seo";
 import Header from "../components/Header";
 import Aside from "../components/Aside";
 import { getDate } from "../helper";
@@ -35,6 +36,10 @@ const queryPosts = graphql`
 
 export default () => (
   <Layout>
+    <SEO
+      title="All posts"
+      keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+    />
     <Header />
     <Content>
       <main
