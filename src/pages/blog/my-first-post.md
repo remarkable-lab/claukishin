@@ -11,12 +11,32 @@ Gatsby exposes a powerful Node.js API, which allows for functionality such as cr
 
 ![yo en paracaidas](/assets/paracaidas_mozjpeg.jpg "paracaidas")
 
-texto de ejemplo despues de la imagen
+texto de ejemplo despues de la imagen la dos siguientes lineas es un comentario:
 
 > Como diria marcus, es que se me atoro 
 >
 > oigame
 
-Siguendo con las pruebas, ahora un enlace 
+Siguendo con las pruebas, ahora un enlace de video
 
 <iframe src="https://www.youtube.com/embed/QR_stgHKkec" width="600" height="400"></iframe>
+
+Un salto de linea, ahora insertare un enlace [hanslebon.com](hanslebon.com), despues hare una lista
+
+* Primer valor
+* segundo valor
+* tercer valor
+  * tercero mas uno
+* Cuarto
+
+Lista Numerica:
+
+1. Primer valor
+2. segundo valor
+3. tercer valor
+
+Ahora este parrafo tambien es de **prueba**  asi que por ahora veremos como podemos arreglar esto
+
+pero pienso que _puede ser asi_.
+
+ 😜 I love emoji
