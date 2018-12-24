@@ -65,6 +65,13 @@ export default function BlogPost(props) {
                 margin: auto;
                 box-shadow: 0 2px 20px #d4d3d3;
               }
+              & blockquote {
+                margin-left: 1rem;
+                font-size: 1.1rem;
+              }
+              & blockquote:before {
+                content: '"';
+              }
             `}
           />
         </article>
