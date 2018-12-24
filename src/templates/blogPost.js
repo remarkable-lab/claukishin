@@ -66,11 +66,15 @@ export default function BlogPost(props) {
                 box-shadow: 0 2px 20px #d4d3d3;
               }
               & blockquote {
-                margin-left: 1rem;
+                font-style: italic;
+                background: #f9f9f9;
+                border-left: 10px solid #ccc;
+                margin: 1.5em 10px;
+                padding: 0.5em 10px;
                 font-size: 1.1rem;
               }
-              & blockquote:before {
-                content: '"';
+              & blockquote p {
+                display: inline;
               }
             `}
           />
