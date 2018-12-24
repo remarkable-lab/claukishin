@@ -32,7 +32,13 @@ function Footer() {
         <div css={container}>
           <div>
             Sigueme en
-            <ul>
+            <ul
+              css={css`
+                padding-inline-start: 0;
+                list-style-type: none;
+                margin-inline-start: 0;
+              `}
+            >
               <li>
                 <a
                   href="https://www.instagram.com/hans.lebon/"

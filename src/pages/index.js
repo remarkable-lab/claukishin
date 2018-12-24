@@ -71,7 +71,13 @@ export default () => (
             render={({ allMarkdownRemark }) => {
               const { edges } = allMarkdownRemark;
               return (
-                <ul>
+                <ul
+                  css={css`
+                    padding-inline-start: 0;
+                    list-style-type: none;
+                    margin-inline-start: 0;
+                  `}
+                >
                   {edges.map(({ node }) => (
                     <li key={node.fields.slug}>
                       <article>

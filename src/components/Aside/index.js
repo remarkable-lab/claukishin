@@ -73,6 +73,9 @@ function Aside() {
             display: flex;
             flex: wrap;
             flex-wrap: wrap;
+            padding-inline-start: 0;
+            list-style-type: none;
+            margin-inline-start: 0;
             li {
               width: calc((100% / 3) - 7.5px);
               min-width: 50px;
