@@ -9,7 +9,6 @@ import { getDate } from "../utils/helpers";
 export default function BlogPost(props) {
   const { data, pageContext } = props;
   const { prev, next } = pageContext;
-  console.log(prev, next);
   const post = data.markdownRemark;
   const disqusShortname = "hansgarcia";
   const disqusConfig = {
@@ -105,6 +104,10 @@ export default function BlogPost(props) {
             <ul
               css={css`
                 margin-bottom: 0;
+                list-style: none;
+                li:last-child {
+                  margin-bottom: 0;
+                }
               `}
             >
               {prev && (
@@ -118,7 +121,14 @@ export default function BlogPost(props) {
                   >
                     ⬅️
                   </span>
-                  <Link to={prev.fields.slug}>{prev.frontmatter.title}</Link>
+                  <Link
+                    to={prev.fields.slug}
+                    style={{
+                      boxShadow: "none"
+                    }}
+                  >
+                    {prev.frontmatter.title}
+                  </Link>
                 </li>
               )}
               {next && (
@@ -132,7 +142,14 @@ export default function BlogPost(props) {
                   >
                     ➡️
                   </span>
-                  <Link to={next.fields.slug}>{next.frontmatter.title}</Link>
+                  <Link
+                    to={next.fields.slug}
+                    style={{
+                      boxShadow: "none"
+                    }}
+                  >
+                    {next.frontmatter.title}
+                  </Link>
                 </li>
               )}
             </ul>
