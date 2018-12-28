@@ -38,7 +38,12 @@ function Aside() {
         padding: 1em;
         border: 1px dashed gray;
         background-color: white;
-        box-shadow: 0 2px 6px #dedede;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          box-shadow: 0 5px 12px #dedede;
+          transform: scale(1.01);
+          transition: all 0.2s ease-in-out;
+        }
         section {
           width: 100%;
         }
