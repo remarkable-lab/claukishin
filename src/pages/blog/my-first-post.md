@@ -39,4 +39,4 @@ Ahora este parrafo tambien es de **prueba**  asi que por ahora veremos como pode
 
 pero pienso que _puede ser asi_.
 
- 😜 I love emoji
+ 😜 I love emojis
