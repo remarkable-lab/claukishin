@@ -7,8 +7,11 @@ const container = css`
   width: 100%;
   display: flex;
   flex-direction: column;
-  div {
+  div,
+  ul {
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
   @media (min-width: 620px) {
     flex-direction: row;
@@ -37,6 +40,10 @@ function Footer() {
                 padding-inline-start: 0;
                 list-style-type: none;
                 margin-inline-start: 0;
+                margin: 0;
+                li {
+                  margin: 0;
+                }
               `}
             >
               <li>
@@ -44,7 +51,7 @@ function Footer() {
                   href="https://www.instagram.com/hans.lebon/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ marginLeft: "5px" }}
+                  style={{ marginLeft: "5px", boxShadow: "none" }}
                 >
                   <img
                     src={instaIcon}
