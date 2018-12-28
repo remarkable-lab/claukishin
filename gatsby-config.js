@@ -50,8 +50,15 @@ module.exports = {
         ]
       }
     },
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-netlify-cms",
-    `gatsby-plugin-react-helmet`
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`
+      }
+    }
   ]
 };
