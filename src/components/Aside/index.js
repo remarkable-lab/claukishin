@@ -77,7 +77,14 @@ function Aside() {
         `}
       >
         <header>
-          <h3 style={{ fontSize: rhythm(3 / 5) }}>Instagram</h3>
+          <h3
+            style={{
+              fontSize: rhythm(3 / 5),
+              margin: `${rhythm(2 / 4)} 0`
+            }}
+          >
+            Instagram
+          </h3>
           <p>Mis ultimos 4 post en instagram</p>
         </header>
         <ul
