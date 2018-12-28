@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { DiscussionEmbed } from "disqus-react";
 import { css } from "@emotion/core";
 import Layout, { Content } from "../components/layout";
-import { getDate } from "../helper";
+import { getDate } from "../utils/helpers";
 
 export default function BlogPost(props) {
   const { data, pageContext } = props;
