@@ -1,11 +1,11 @@
 import React from "react";
-import { Link, graphql, StaticQuery } from "gatsby";
+import { graphql, StaticQuery } from "gatsby";
 import { css } from "@emotion/core";
 import Layout, { Content } from "../components/layout";
 import SEO from "../components/Seo";
 import Header from "../components/Header";
 import Aside from "../components/Aside";
-import { getDate } from "../utils/helpers";
+import Posts from "../components/Posts";
 import { rhythm } from "../utils/typography";
 
 const queryPosts = graphql`
@@ -69,51 +69,7 @@ export default () => (
             query={queryPosts}
             render={({ allMarkdownRemark }) => {
               const { edges } = allMarkdownRemark;
-              return (
-                <ul style={{ listStyle: "none" }}>
-                  {edges.map(({ node }) => (
-                    <li key={node.fields.slug}>
-                      <article
-                        style={{
-                          marginBottom: rhythm(2)
-                        }}
-                      >
-                        <header
-                          style={{
-                            marginBottom: rhythm(1 / 4)
-                          }}
-                        >
-                          <h3
-                            style={{
-                              marginBottom: rhythm(2 / 4)
-                            }}
-                          >
-                            <Link
-                              to={node.fields.slug}
-                              style={{ boxShadow: "none" }}
-                            >
-                              {node.frontmatter.title}
-                            </Link>
-                          </h3>
-                          <small>
-                            <span
-                              style={{
-                                marginRight: rhythm(1 / 2)
-                              }}
-                            >
-                              {getDate(node.frontmatter.date)}
-                            </span>
-                            🗸📖☕
-                            <span>{node.timeToRead}</span>
-                            min de lectura
-                          </small>
-                        </header>
-                        <p>{node.excerpt}</p>
-                      </article>
-                    </li>
-                  ))}
-                </ul>
-              );
+              return <Posts posts={edges} />;
             }}
           />
         </section>
