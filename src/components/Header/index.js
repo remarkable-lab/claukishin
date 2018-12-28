@@ -1,6 +1,7 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { css } from "@emotion/core";
+import { scale } from "../../utils/typography";
 import BgHero from "../../assets/images/hero.MozJPEG.jpg";
 
 const heroStyle = css`
@@ -49,7 +50,7 @@ function Header() {
             <div>
               <div>
                 <div>
-                  <h1>{title}</h1>
+                  <h1 style={{ ...scale(1.0) }}>{title}</h1>
                   <p>{subtitle}</p>
                 </div>
               </div>
