@@ -5,7 +5,8 @@ import Layout, { Content } from "../components/layout";
 import SEO from "../components/Seo";
 import Header from "../components/Header";
 import Aside from "../components/Aside";
-import { getDate } from "../helper";
+import { getDate } from "../utils/helpers";
+import { rhythm } from "../utils/typography";
 
 const queryPosts = graphql`
   query {
@@ -47,66 +48,63 @@ export default () => (
           width: 100%;
           display: flex;
           flex-wrap: wrap;
-          margin-bottom: 2rem;
-          section,
-          aside {
+          margin-bottom: ${rhythm(2)};
+          & > section,
+          & > aside {
             width: 100%;
+            height: 100%;
           }
-          @media (min-width: 700px) {
-            & section {
+          @media (min-width: 900px) {
+            & > section {
               width: 70%;
             }
-            aside {
+            & > aside {
               width: 30%;
             }
           }
         `}
       >
         <section>
-          <header>
-            <h3>Mis ultimos posts</h3>
-          </header>
           <StaticQuery
             query={queryPosts}
             render={({ allMarkdownRemark }) => {
               const { edges } = allMarkdownRemark;
               return (
-                <ul
-                  css={css`
-                    padding-inline-start: 0;
-                    list-style-type: none;
-                    margin-inline-start: 0;
-                  `}
-                >
+                <ul>
                   {edges.map(({ node }) => (
                     <li key={node.fields.slug}>
-                      <article>
-                        <header>
+                      <article
+                        style={{
+                          marginBottom: rhythm(2)
+                        }}
+                      >
+                        <header
+                          style={{
+                            marginBottom: rhythm(1 / 4)
+                          }}
+                        >
                           <h3
-                            css={css`
-                              font-size: 26px;
-                            `}
+                            style={{
+                              marginBottom: rhythm(2 / 4)
+                            }}
                           >
-                            <Link to={node.fields.slug}>
+                            <Link
+                              to={node.fields.slug}
+                              style={{ boxShadow: "none" }}
+                            >
                               {node.frontmatter.title}
                             </Link>
                           </h3>
                           <small>
                             <span
-                              css={css`
-                                margin-right: 0.5rem;
-                              `}
+                              style={{
+                                marginRight: rhythm(1 / 2)
+                              }}
                             >
                               {getDate(node.frontmatter.date)}
                             </span>
                             🗸📖☕
-                            <span
-                              css={css`
-                                margin-left: 0.3rem;
-                              `}
-                            >
-                              {node.timeToRead}
-                            </span>
+                            <span>{node.timeToRead}</span>
                             min de lectura
                           </small>
                         </header>
