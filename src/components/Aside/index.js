@@ -2,6 +2,7 @@ import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { css } from "@emotion/core";
 import Img from "gatsby-image";
+import { rhythm } from "../../utils/typography";
 
 const query = graphql`
   query {
@@ -52,7 +53,14 @@ function Aside() {
       <section key="about">
         <article>
           <header>
-            <h3>ClauKishin</h3>
+            <h3
+              style={{
+                fontSize: rhythm(3 / 5),
+                margin: `${rhythm(2 / 4)} 0`
+              }}
+            >
+              ClauKishin
+            </h3>
             <p>
               Hola, soy Caukishin, mi meta es la libertad financiera, la tuya
               tambien si has visitado este blog, en todo caso espero disfrutes
@@ -69,7 +77,7 @@ function Aside() {
         `}
       >
         <header>
-          <h3>Instagram</h3>
+          <h3 style={{ fontSize: rhythm(3 / 5) }}>Instagram</h3>
           <p>Mis ultimos 4 post en instagram</p>
         </header>
         <ul
