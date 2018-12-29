@@ -104,6 +104,7 @@ export default function BlogPost(props) {
             <ul
               css={css`
                 margin-bottom: 0;
+                margin-left: 0;
                 list-style: none;
                 li:last-child {
                   margin-bottom: 0;

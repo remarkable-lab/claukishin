@@ -4,7 +4,7 @@ import { getDate } from "../../utils/helpers";
 import { rhythm } from "../../utils/typography";
 
 export default ({ posts }) => (
-  <ul style={{ listStyle: "none" }}>
+  <ul style={{ listStyle: "none", marginLeft: 0 }}>
     {posts.map(({ node }) => (
       <li key={node.fields.slug}>
         <article
