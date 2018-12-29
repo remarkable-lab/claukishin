@@ -83,7 +83,7 @@ function Nav({ location }) {
       <Content>
         <nav css={siteNav}>
           <div>
-            <Link to="/">Clau</Link>
+            <Link to="/" style={{ boxShadow: "none" }}>Clau</Link>
           </div>
           {/* <ul css={navList}>
             <li>
