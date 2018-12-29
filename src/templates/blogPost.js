@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { DiscussionEmbed } from "disqus-react";
 import { css } from "@emotion/core";
 import Layout, { Content } from "../components/layout";
+import Signup from "../components/SignUp";
 import { getDate } from "../utils/helpers";
 
 export default function BlogPost({ data, pageContext, location }) {
@@ -68,6 +69,10 @@ export default function BlogPost({ data, pageContext, location }) {
             `}
           />
         </article>
+        <br />
+        <div style={{ margin: "90px 0 40px 0" }}>
+          <Signup />
+        </div>
         <br />
         {(prev && prev.frontmatter.public) ||
         (next && next.frontmatter.public) ? (
