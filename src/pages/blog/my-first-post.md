@@ -1,6 +1,6 @@
 ---
 date: '2017-11-28'
-title: "Empieza la aventura, Bienvenido a mi blog \U0001F44B"
+title: "The First Things, Empieza la aventura, Bienvenido a mi blog \U0001F44B"
 public: true
 tags:
   - blog
@@ -13,7 +13,7 @@ Gatsby exposes a powerful Node.js API, which allows for functionality such as cr
 
 texto de ejemplo despues de la imagen la dos siguientes lineas es un comentario:
 
-> Como diria marcus, es que se me atoro 
+> Como diria marcus, es que se me atoro
 >
 > oigame
 
