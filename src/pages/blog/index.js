@@ -31,8 +31,8 @@ const queryPosts = graphql`
   }
 `;
 
-export default () => (
-  <Layout>
+export default ({ location }) => (
+  <Layout location={location}>
     <SEO
       title="Mis artículos"
       keywords={[`blog`, `gatsby`, `javascript`, `react`]}

@@ -6,8 +6,7 @@ import { css } from "@emotion/core";
 import Layout, { Content } from "../components/layout";
 import { getDate } from "../utils/helpers";
 
-export default function BlogPost(props) {
-  const { data, pageContext } = props;
+export default function BlogPost({ data, pageContext, location }) {
   const { prev, next } = pageContext;
   const post = data.markdownRemark;
   const disqusShortname = "hansgarcia";
@@ -16,7 +15,7 @@ export default function BlogPost(props) {
     title: post.frontmatter.title
   };
   return (
-    <Layout>
+    <Layout location={location}>
       <Content maxWidth="600px">
         <article>
           <header
@@ -24,13 +23,7 @@ export default function BlogPost(props) {
               margin: 2rem 0;
             `}
           >
-            <h1
-              css={css`
-                font-size: 30px;
-              `}
-            >
-              {post.frontmatter.title}
-            </h1>
+            <h1>{post.frontmatter.title}</h1>
             <small>
               <span
                 css={css`
@@ -53,9 +46,6 @@ export default function BlogPost(props) {
           <div
             dangerouslySetInnerHTML={{ __html: post.html }}
             css={css`
-              & p {
-                width: 100%;
-              }
               & img {
                 display: flex;
                 width: 100%;
