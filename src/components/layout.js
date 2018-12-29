@@ -1,31 +1,24 @@
 import React from "react";
 import { css } from "@emotion/core";
-import { Location } from "@reach/router";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import "../styles/app.css";
 import "../styles/reboot.css";
 
 export default function Layout(props) {
-  const { children } = props;
+  const { children, location } = props;
   return (
-    <Location>
-      {({ location }) => (
-        <div
-          style={{ display: "flex", flexDirection: "column", height: "100vh" }}
-        >
-          <div style={{ flex: "1 0 auto" }}>
-            <div>
-              <Nav location={location} />
-              {children}
-            </div>
-          </div>
-          <div style={{ flexShrink: 0 }}>
-            <Footer />
-          </div>
+    <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
+      <div style={{ flex: "1 0 auto" }}>
+        <div>
+          <Nav location={location} />
+          {children}
         </div>
-      )}
-    </Location>
+      </div>
+      <div style={{ flexShrink: 0 }}>
+        <Footer />
+      </div>
+    </div>
   );
 }
 
@@ -40,6 +33,7 @@ export const Content = ({ children, maxWidth = "960px" }) => (
         max-width: ${maxWidth};
         height: 100%;
         margin: auto;
+        margin-top: 2rem;
         padding: 0 7px;
         @media (min-width: 700px) {
           width: 60%;
