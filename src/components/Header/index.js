@@ -6,7 +6,7 @@ import BgHero from "../../assets/images/hero.MozJPEG.jpg";
 
 const heroStyle = css`
   width: 100%;
-  padding: 8rem 1rem 5rem 1rem;
+  padding: 5rem 1rem 4rem 1rem;
   margin-bottom: 3rem;
   justify-content: center;
   overflow: hidden;
