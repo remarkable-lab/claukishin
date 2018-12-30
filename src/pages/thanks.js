@@ -1,6 +1,6 @@
 import React from "react";
-import { graphql } from "gatsby";
-import Layout, { Content } from "../components/Layout";
+// import { graphql } from "gatsby";
+import Layout, { Content } from "../components/layout";
 
 function Thanks({ location }) {
   return (
@@ -18,14 +18,14 @@ function Thanks({ location }) {
   );
 }
 
-export const pageQuery = graphql`
-  query ThanksSiteData {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`;
+// export const pageQuery = graphql`
+//   query ThanksSiteData {
+//     site {
+//       siteMetadata {
+//         title
+//       }
+//     }
+//   }
+// `;
 
 export default Thanks;

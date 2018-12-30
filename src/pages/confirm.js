@@ -1,6 +1,6 @@
 import React from "react";
-import { graphql } from "gatsby";
-import Layout, { Content } from "../components/Layout";
+// import { graphql } from "gatsby";
+import Layout, { Content } from "../components/layout";
 
 function Confirm({ location }) {
   // const siteTitle = get(this.props, "data.site.siteMetadata.title");
@@ -19,14 +19,14 @@ function Confirm({ location }) {
   );
 }
 
-export const pageQuery = graphql`
-  query ConfirmSiteData {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`;
+// export const pageQuery = graphql`
+//   query ConfirmSiteData {
+//     site {
+//       siteMetadata {
+//         title
+//       }
+//     }
+//   }
+// `;
 
 export default Confirm;
