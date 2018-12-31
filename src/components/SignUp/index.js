@@ -7,11 +7,46 @@ const api = `${host}/3.0/lists/${listId}/members/`;
 
 function Signup() {
   return (
-    <form>
-      <div>
+    <form
+      css={css`
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      `}
+    >
+      <div
+        css={css`
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          padding: 30px 40px;
+          border: 1px solid #e4e3e3;
+          transition: box-shadow 100ms ease-in-out;
+          @media (min-width: 620px) {
+            flex-direction: row;
+            justify-content: space-between;
+            div:nth-of-type(1) {
+              width: 45%;
+              margin: auto;
+              padding: 20px;
+            }
+            div:nth-of-type(2) {
+              width: 55%;
+              padding: 20px;
+            }
+          }
+          &:hover {
+            box-shadow: 1px 2px 10px #e4e3e3;
+            transition: box-shadow 100ms ease-in-out;
+          }
+        `}
+      >
         <div id="newsletter">
-          <h3>Join the news letter</h3>
-          <p>Subscribe to ge my latest content by email</p>
+          <h3>Unete a mi newsletter</h3>
+          <p>
+            Suscribete para recibir mi contenido por email y no te pierdas
+            ninguno de mis articulos
+          </p>
         </div>
         <div
           id="form"
