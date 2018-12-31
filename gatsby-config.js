@@ -21,7 +21,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/`,
-        name: "post"
+        name: `post`
       }
     },
     {
@@ -41,10 +41,7 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
-              showCaptions: true,
-              wrapperStyle: `
-                margin: 3px solid red
-              `
+              showCaptions: true
             }
           }
         ]
