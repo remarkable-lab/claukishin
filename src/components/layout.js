@@ -6,17 +6,17 @@ import "../styles/app.css";
 import "../styles/reboot.css";
 
 export default function Layout(props) {
-  const { children, location } = props;
+  const { children, location, maxWidth } = props;
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
       <div style={{ flex: "1 0 auto" }}>
         <div>
-          <Nav location={location} />
+          <Nav location={location} maxWidth={maxWidth} />
           {children}
         </div>
       </div>
       <div style={{ flexShrink: 0 }}>
-        <Footer />
+        <Footer maxWidth={maxWidth} />
       </div>
     </div>
   );
