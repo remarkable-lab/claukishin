@@ -33,7 +33,6 @@ export const Content = ({ children, maxWidth = "960px" }) => (
         max-width: ${maxWidth};
         height: 100%;
         margin: auto;
-        margin-top: 2rem;
         padding: 0 7px;
         @media (min-width: 700px) {
           width: 60%;
