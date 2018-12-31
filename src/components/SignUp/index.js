@@ -32,7 +32,8 @@ function Signup() {
           <button
             type="submit"
             css={css`
-              max-width: 100px;
+              width: 100%;
+              max-width: 120px;
               border: 1px solid #9d40ab;
               padding: 9px 7px;
               border-radius: 7px;
