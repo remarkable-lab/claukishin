@@ -1,26 +1,7 @@
 import React from "react";
-import { graphql } from "gatsby";
 import { rhythm } from "../../utils/typography";
 
-export const BioInfo = graphql`
-  query {
-    allMarkdownRemark(filter: { frontmatter: { id: { eq: "bio" } } }) {
-      edges {
-        node {
-          frontmatter {
-            id
-            title
-            description
-          }
-        }
-      }
-    }
-  }
-`;
-
-function Bio(props) {
-  console.log("bio");
-  console.log(props);
+function Bio() {
   return (
     <section key="about">
       <article>
