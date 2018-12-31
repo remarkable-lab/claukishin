@@ -1,8 +1,6 @@
 import React from "react";
 import { css } from "@emotion/core";
 
-import "./style.css";
-
 const host = `https://us7.api.mailchimp.com`;
 const listId = `fbb89f01e9`;
 const api = `${host}/3.0/lists/${listId}/members/`;
