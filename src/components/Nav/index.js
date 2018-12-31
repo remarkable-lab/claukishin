@@ -66,7 +66,18 @@ const noSelected = css`
   ${linkBase};
 `;
 
-function Nav({ location }) {
+const pages = [
+  // {
+  //   to: "/contacto",
+  //   label: "contacto"
+  // },
+  // {
+  //   to: "/me",
+  //   label: "me"
+  // }
+];
+
+function Nav({ location, maxWidth }) {
   let { pathname } = location;
   pathname = pathname.trim();
 
@@ -80,26 +91,26 @@ function Nav({ location }) {
           background: linear-gradient(to left, rgba(210, 66, 210, 1), rgba(139, 63, 158, 1))`};
       `}
     >
-      <Content>
+      <Content maxWidth={maxWidth}>
         <nav css={siteNav}>
           <div>
-            <Link to="/" style={{ boxShadow: "none" }}>Clau</Link>
+            <Link to="/" style={{ boxShadow: "none" }}>
+              Clau
+            </Link>
           </div>
-          {/* <ul css={navList}>
-            <li>
-              <Link
-                to="/contacto"
-                css={pathname === "/contacto" ? selected : noSelected}
-              >
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link to="/me" css={pathname === "/me" ? selected : noSelected}>
-                About
-              </Link>
-            </li>
-          </ul> */}
+          <ul css={navList}>
+            {pages.map(page => (
+              <li>
+                <Link
+                  to={page.to}
+                  css={pathname === page.to ? selected : noSelected}
+                  style={{ boxShadow: "none" }}
+                >
+                  {page.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </nav>
       </Content>
     </div>
