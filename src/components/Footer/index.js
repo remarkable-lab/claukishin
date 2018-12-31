@@ -19,7 +19,7 @@ const container = css`
   }
 `;
 
-function Footer() {
+function Footer({ maxWidth }) {
   return (
     <footer
       css={css`
@@ -31,7 +31,7 @@ function Footer() {
         border-top: 1px solid #e8e8e8;
       `}
     >
-      <Content>
+      <Content maxWidth={maxWidth}>
         <div css={container}>
           <div>
             Sigueme en
@@ -44,6 +44,17 @@ function Footer() {
                 li {
                   margin: 0;
                 }
+                a {
+                  margin-left: 5px;
+                  box-shadow: none;
+                }
+                img {
+                  width: 100%;
+                  heigt: auto;
+                  max-width: 18px;
+                  margin: auto;
+                  border-radius: 7px;
+                }
               `}
             >
               <li>
@@ -51,19 +62,8 @@ function Footer() {
                   href="https://www.instagram.com/hans.lebon/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ marginLeft: "5px", boxShadow: "none" }}
                 >
-                  <img
-                    src={instaIcon}
-                    alt="instagram page"
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                      maxWidth: "18px",
-                      margin: "auto",
-                      borderRadius: "7px"
-                    }}
-                  />
+                  <img src={instaIcon} alt="instagram page" />
                 </a>
               </li>
             </ul>
