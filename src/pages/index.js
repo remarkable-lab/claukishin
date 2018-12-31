@@ -49,6 +49,9 @@ export default ({ location }) => (
           display: flex;
           flex-wrap: wrap;
           margin-bottom: ${rhythm(2)};
+          p {
+            font-size: 18px;
+          }
           & > section,
           & > aside {
             width: 100%;
@@ -57,6 +60,7 @@ export default ({ location }) => (
           @media (min-width: 900px) {
             & > section {
               width: 70%;
+              padding-right: 2rem;
             }
             & > aside {
               width: 30%;
