@@ -2,16 +2,10 @@ import React from "react";
 import { css } from "@emotion/core";
 import { renderStylesToNodeStream } from "emotion-server";
 
-const host = `https://us7.api.mailchimp.com`;
-const listId = `fbb89f01e9`;
-const api = `${host}/3.0/lists/${listId}/members/`;
-
 class Signup extends React.Component {
   state = {
-    email_address: "urist.mcvankab@freddiesjokes.com",
-    status: "subscribed",
-    FNAME: "Urist",
-    LNAME: ""
+    email: "urist.mcvankab@freddiesjokes.com",
+    name: "Urist"
   };
 
   _onChange = e => {
@@ -24,37 +18,8 @@ class Signup extends React.Component {
 
   _onSubmit = event => {
     event.preventDefault();
-    const { email_address, FNAME, LNAME } = this.state;
-    const objJson = {
-      email_address,
-      status,
-      merge_fields: {
-        FNAME,
-        LNAME
-      }
-    };
-    fetch(
-      "https://hanslebon.us7.list-manage.com/subscribe/post-json?u=087fd9c746a82ae9dfa71b0df&amp;id=fbb89f01e9",
-      {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "text/plain"
-        },
-        body: JSON.stringify(objJson) 
-      }
-    )
-      .then(response => {
-        console.log(response);
-        alert(`success`);
-        return response;
-      })
-      .then(response => {
-        console.log(response);
-      })
-      .catch(error => {
-        console.error(error);
-      });
+    const { email, name } = this.state;
+    console.log(email, name);
   };
 
   // https://hanslebon.us7.list-manage.com/subscribe/post?u=087fd9c746a82ae9dfa71b0df&amp;id=fbb89f01e9"
@@ -98,7 +63,7 @@ class Signup extends React.Component {
           `}
         >
           <div id="newsletter">
-            <h3>Unete a mi newsletter</h3>
+            <h3 style={{ margin: 0 }}>Unete a mi newsletter</h3>
             <p>
               Suscribete para recibir mi contenido por email y no te pierdas
               ninguno de mis articulos
