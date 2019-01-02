@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: hlebon/claukishin
+  repo: remarkable-lab/claukishin
 
 media_folder: static/assets
 public_folder: assets
