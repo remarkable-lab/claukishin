@@ -7,7 +7,9 @@ tags:
   - navidad
   - metas
 ---
-Muchos celebramos la navidad, y para cada persona este evento puede tener significados distintos. Para algunos es el tiempo de embellecer la casa, lucir los mejores vestidos, ofrecer las fiestas que luego serán las más comentadas, las cenas más exquisitas o dar los regalos que sean necesarios para cumplir con las expectativas que la sociedad o nosotros mismos nos imponemos. Para otros es el tiempo de compartir con familiares, amigos y hacer algo bueno por las personas que lo necesiten. Y para otros tantos, es el momento de celebrar la llegada de Jesús y todo lo que eso representó para el mundo. 
+![Mujer haciendo shopping de navidad](/assets/compras.png)
+
+Muchos celebramos la navidad, y para cada persona este evento puede tener significados distintos. Para algunos es el tiempo de embellecer la casa, lucir los mejores vestidos, ofrecer las fiestas que luego serán las más comentadas, las cenas más exquisitas o dar los regalos que sean necesarios para cumplir con las expectativas que la sociedad o nosotros mismos nos imponemos. Para otros es el tiempo de compartir con familiares, amigos y hacer algo bueno por las personas que lo necesiten. Y para otros tantos, es el momento de celebrar la llegada de Jesús y todo lo que eso representó para el mundo. 
 
 Independientemente del significado que esta fecha tenga para ti, cuando se trata de finanzas personales es importante que tengas presente tres cosas: 
 
