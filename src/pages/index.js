@@ -22,7 +22,6 @@ const queryPosts = graphql`
             date
             tags
             public
-            author
           }
           excerpt
           timeToRead
