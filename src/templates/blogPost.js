@@ -10,7 +10,7 @@ import { getDate } from "../utils/helpers";
 export default function BlogPost({ data, pageContext, location }) {
   const { prev, next } = pageContext;
   const post = data.markdownRemark;
-  const disqusShortname = "hansgarcia";
+  const disqusShortname = "https-claukishin-com";
   const disqusConfig = {
     identifier: post.fields.slug,
     title: post.frontmatter.title
@@ -70,10 +70,14 @@ export default function BlogPost({ data, pageContext, location }) {
           />
         </article>
         <br />
-        <div style={{ margin: "90px 0 40px 0" }}>
-          <Signup pathname={location.pathname} />
-        </div>
-        <br />
+        {false && (
+          <React.Fragment>
+            <div style={{ margin: "90px 0 40px 0" }}>
+              <Signup pathname={location.pathname} />
+            </div>
+            <br />
+          </React.Fragment>
+        )}
         {(prev && prev.frontmatter.public) ||
         (next && next.frontmatter.public) ? (
           <section

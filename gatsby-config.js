@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `ClauKishin`,
-    subtitle: `Finanzas y mucho mas`,
-    description: `Mi description de la pagina`,
-    author: `Clau Flores`
+    subtitle: ``,
+    description: `Tips financieros`,
+    author: `Clau`
   },
   pathPrefix: `/`,
   plugins: [
@@ -55,6 +55,13 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`
+      }
+    },
+    {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint:
+          "https://hanslebon.us7.list-manage.com/subscribe/post?u=087fd9c746a82ae9dfa71b0df&amp;id=fbb89f01e9" // see instructions section below
       }
     }
   ]

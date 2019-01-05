@@ -12,12 +12,11 @@ function Bio() {
               margin: `${rhythm(2 / 4)} 0 ${rhythm(2 / 4)} 0`
             }}
           >
-            ClauKishin
+            Bio
           </h3>
           <p>
-            Hola, soy Caukishin, mi meta es la libertad financiera, la tuya
-            tambien si has visitado este blog, en todo caso espero disfrutes mis
-            posts, sin mas que decir: Bienvenido
+            Hola, soy Clau! me encanta conversar sobre finanzas tanto así que he
+            creado este blog. Mi meta personal? libertad financiera.
           </p>
         </header>
       </article>
