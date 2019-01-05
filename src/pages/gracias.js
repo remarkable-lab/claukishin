@@ -1,5 +1,4 @@
 import React from "react";
-// import { graphql } from "gatsby";
 import Layout, { Content } from "../components/layout";
 
 function Thanks({ location }) {

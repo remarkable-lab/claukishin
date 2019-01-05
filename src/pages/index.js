@@ -37,7 +37,7 @@ const queryPosts = graphql`
 export default ({ location }) => (
   <Layout location={location}>
     <SEO
-      title="All posts"
+      title="Clau blog"
       keywords={[`blog`, `gatsby`, `javascript`, `react`]}
     />
     <Header />

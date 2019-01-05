@@ -1,34 +1,55 @@
 import React from "react";
+import { navigate } from "gatsby";
 import { css } from "@emotion/core";
-import { renderStylesToNodeStream } from "emotion-server";
+import addToMailchimp from "gatsby-plugin-mailchimp";
 
 class Signup extends React.Component {
   state = {
-    email: "urist.mcvankab@freddiesjokes.com",
-    name: "Urist"
+    email: "hanslgarcia@gmail.com",
+    name: "Hans",
+    lastName: "Lebon",
+    error: false,
+    msg: ""
   };
 
-  _onChange = e => {
+  handleOnChange = e => {
     const { name, value } = e.target;
-    console.log(e.target);
     this.setState({
       [name]: value
     });
   };
 
-  _onSubmit = event => {
-    event.preventDefault();
-    const { email, name } = this.state;
-    console.log(email, name);
+  handleOnSubmit = async e => {
+    e.preventDefault();
+    try {
+      const { email, name, lastName } = this.state;
+
+      const { result, msg } = await addToMailchimp(email, {
+        PATHNAME: this.props.pathname,
+        FNAME: name,
+        LNAME: lastName
+      });
+      console.log(result);
+      if (result === "error") {
+        this.setState({
+          error: true,
+          msg: msg.split("<")[0]
+        });
+      } else {
+        navigate(`/confirm`, { state: { name } });
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  // https://hanslebon.us7.list-manage.com/subscribe/post?u=087fd9c746a82ae9dfa71b0df&amp;id=fbb89f01e9"
-
   render() {
-    const { FNAME, email_address: email } = this.state;
+    console.log(this.props.pathname);
+    const { name, lastName, email } = this.state;
     return (
       <form
-        onSubmit={this._onSubmit}
+        onSubmit={this.handleOnSubmit}
+        noValidate
         css={css`
           display: flex;
           justify-content: center;
@@ -63,10 +84,12 @@ class Signup extends React.Component {
           `}
         >
           <div id="newsletter">
-            <h3 style={{ margin: 0 }}>Unete a mi newsletter</h3>
-            <p>
+            <h3 style={{ margin: 0, marginBottom: "1rem" }}>
+              Unete para estar en lo último
+            </h3>
+            <p style={{ marginTop: "5px" }}>
               Suscribete para recibir mi contenido por email y no te pierdas
-              ninguno de mis articulos
+              ninguno de mis artículos
             </p>
           </div>
           <div
@@ -86,16 +109,23 @@ class Signup extends React.Component {
             <input
               type="text"
               placeholder="Nombre"
-              value={FNAME}
-              name="FNAME"
-              onChange={this._onChange}
+              name="name"
+              value={name}
+              onChange={this.handleOnChange}
+            />
+            <input
+              type="text"
+              placeholder="Apellido"
+              name="lastName"
+              value={lastName}
+              onChange={this.handleOnChange}
             />
             <input
               type="text"
               placeholder="Email"
+              name="email"
               value={email}
-              name="email_address"
-              onChange={this._onChange}
+              onChange={this.handleOnChange}
             />
             <button
               type="submit"

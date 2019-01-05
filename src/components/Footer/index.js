@@ -59,7 +59,7 @@ function Footer({ maxWidth }) {
             >
               <li>
                 <a
-                  href="https://www.instagram.com/hans.lebon/"
+                  href="https://www.instagram.com/claukishin/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -69,7 +69,7 @@ function Footer({ maxWidth }) {
             </ul>
           </div>
           <div>
-            Claudia Flores
+            Clau
             <span style={{ color: "#b91d73", margin: "0 0.4rem" }}>|</span>
             Finanzas
           </div>

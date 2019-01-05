@@ -22,14 +22,16 @@ function Header() {
           <header css={heroStyle}>
             <div>
               <h1 style={{ ...scale(1.0) }}>{title}</h1>
-              <p
-                style={{
-                  fontSize: "1.3rem",
-                  fontFamily: "Merriweather, Georgia, serif"
-                }}
-              >
-                {subtitle}
-              </p>
+              {subtitle.trim().length > 0 && (
+                <p
+                  style={{
+                    fontSize: "1.3rem",
+                    fontFamily: "Merriweather, Georgia, serif"
+                  }}
+                >
+                  {subtitle}
+                </p>
+              )}
             </div>
           </header>
         );
