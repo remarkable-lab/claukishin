@@ -71,7 +71,7 @@ export default function BlogPost({ data, pageContext, location }) {
         </article>
         <br />
         <div style={{ margin: "90px 0 40px 0" }}>
-          <Signup />
+          <Signup pathname={location.pathname} />
         </div>
         <br />
         {(prev && prev.frontmatter.public) ||
@@ -171,7 +171,6 @@ export const query = graphql`
       frontmatter {
         title
         date
-        author
       }
       timeToRead
       fields {
