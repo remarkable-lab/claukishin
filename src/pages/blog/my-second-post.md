@@ -1,4 +1,5 @@
 ---
+path: "segundo-post-md"
 title: "Segundo post👋"
 date: "2017-12-02"
 public: true

@@ -1,4 +1,5 @@
 ---
+path: tercer-post-md
 title: "Como escribir un post 👋"
 date: "2017-12-10"
 public: true
