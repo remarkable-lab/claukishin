@@ -19,6 +19,7 @@ exports.createPages = ({ graphql, actions }) => {
             node {
               html
               frontmatter {
+                path
                 title
                 date
                 tags
@@ -34,9 +35,11 @@ exports.createPages = ({ graphql, actions }) => {
     `).then(result => {
       const posts = result.data.allMarkdownRemark.edges;
       posts.forEach(({ node }, index) => {
-        if (node.frontmatter.public) {
+        const { public: publicPost } = node.frontmatter;
+        if (publicPost) {
+          const newPath = node.fields.slug;
           createPage({
-            path: node.fields.slug,
+            path: newPath,
             component: path.resolve(`./src/templates/blogPost.js`),
             context: {
               slug: node.fields.slug,
