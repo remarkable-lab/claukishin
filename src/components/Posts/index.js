@@ -24,7 +24,11 @@ export default ({ posts }) => (
             <h3>
               <Link
                 to={node.fields.slug}
-                style={{ boxShadow: "none", color: "#212529" }}
+                style={{
+                  boxShadow: "none",
+                  color: "#212529",
+                  margin: "1rem 0"
+                }}
               >
                 <span>{node.frontmatter.title}</span>
               </Link>
