@@ -2,6 +2,7 @@ import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { scale } from "../../utils/typography";
 import { heroStyle } from "./style";
+import "typeface-dancing-script";
 
 function Header() {
   return (
@@ -21,12 +22,19 @@ function Header() {
         return (
           <header css={heroStyle}>
             <div>
-              <h1 style={{ ...scale(1.0) }}>{title}</h1>
+              <h1
+                style={{
+                  fontFamily: "'Dancing Script', cursive",
+                  ...scale(1.5)
+                }}
+              >
+                {title}
+              </h1>
               {subtitle.trim().length > 0 && (
                 <p
                   style={{
-                    fontSize: "1.3rem",
-                    fontFamily: "Merriweather, Georgia, serif"
+                    fontSize: "1.5rem",
+                    fontFamily: "'Dancing Script', cursive"
                   }}
                 >
                   {subtitle}
