@@ -5,31 +5,31 @@ import { rhythm } from "../../utils/typography";
 
 export default ({ posts }) => (
   <ul style={{ listStyle: "none", marginLeft: 0 }}>
-    {posts.map(({ node }) => (
+    {posts.map(({ node, last }) => (
       <li key={node.fields.slug}>
         <article
           style={{
-            marginBottom: rhythm(2)
+            marginBottom: rhythm(2),
+            padding: last ? "1rem" : 0,
+            background: last ? "#efefef" : "white",
+            borderRadius: last ? "7px" : 0
           }}
+          className="article"
         >
           <header
             style={{
-              marginBottom: rhythm(1 / 4)
+              marginBottom: `${rhythm(2 / 4)}`
             }}
           >
-            <h3
-              style={{
-                marginBottom: rhythm(2 / 4)
-              }}
-            >
+            <h3>
               <Link
                 to={node.fields.slug}
-                style={{ color: "#212529", boxShadow: "none" }}
+                style={{ boxShadow: "none", color: "#212529" }}
               >
-                {node.frontmatter.title}
+                <span>{node.frontmatter.title}</span>
               </Link>
             </h3>
-            <small>
+            <small style={{ fontSize: "16px" }}>
               <span
                 style={{
                   marginRight: rhythm(1 / 2)
@@ -37,7 +37,7 @@ export default ({ posts }) => (
               >
                 {getDate(node.frontmatter.date)}
               </span>
-              🗸📖☕
+              📖
               <span>{node.timeToRead}</span>
               min de lectura
             </small>
