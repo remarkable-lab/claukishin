@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `ClauKishin`,
-    subtitle: ``,
+    subtitle: `El Blog de Clau`,
     description: `Tips financieros`,
     author: `Clau`
   },

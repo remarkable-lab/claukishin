@@ -34,7 +34,7 @@ function Footer({ maxWidth }) {
       <Content maxWidth={maxWidth}>
         <div css={container}>
           <div>
-            Sigueme en
+            Sígueme en
             <ul
               css={css`
                 padding-inline-start: 0;

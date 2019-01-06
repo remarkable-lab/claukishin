@@ -11,6 +11,7 @@ collections:
     folder: src/pages/blog
     create: true
     fields:
+      - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: public, label: Public, widget: "boolean", default: false }

@@ -12,7 +12,7 @@ function Aside() {
         background-color: white;
         transition: all 0.2s ease-in-out;
         &:hover {
-          box-shadow: 0 5px 12px #dedede;
+          box-shadow: 0 5px 12px #a8a8a8;
           transform: scale(1.01);
           transition: all 0.2s ease-in-out;
         }
