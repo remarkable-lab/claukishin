@@ -72,6 +72,7 @@ export default ({ location }) => (
             query={queryPosts}
             render={({ allMarkdownRemark }) => {
               const { edges } = allMarkdownRemark;
+              edges[0].last = true;
               return <Posts posts={edges} />;
             }}
           />
