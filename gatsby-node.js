@@ -33,6 +33,8 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `).then(result => {
+      console.log(result);
+      console.log(result.data);
       const posts = result.data.allMarkdownRemark.edges;
       posts.forEach(({ node }, index) => {
         const { public: publicPost } = node.frontmatter;
