@@ -30,8 +30,7 @@ export default ({ posts }) => (
                 to={node.fields.slug}
                 style={{
                   boxShadow: "none",
-                  color: "#212529",
-                  margin: "1rem 0"
+                  color: "#212529"
                 }}
               >
                 <span>{node.frontmatter.title}</span>
