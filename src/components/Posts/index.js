@@ -21,13 +21,16 @@ export default ({ posts }) => (
               marginBottom: `${rhythm(2 / 4)}`
             }}
           >
-            <h3>
+            <h3
+              style={{
+                margin: "1rem 0"
+              }}
+            >
               <Link
                 to={node.fields.slug}
                 style={{
                   boxShadow: "none",
-                  color: "#212529",
-                  margin: "1rem 0"
+                  color: "#212529"
                 }}
               >
                 <span>{node.frontmatter.title}</span>
