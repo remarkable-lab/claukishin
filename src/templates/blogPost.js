@@ -70,7 +70,7 @@ export default function BlogPost({ data, pageContext, location }) {
           />
         </article>
         <br />
-        {false && (
+        {true && (
           <React.Fragment>
             <div style={{ margin: "90px 0 40px 0" }}>
               <Signup pathname={location.pathname} />
@@ -111,7 +111,7 @@ export default function BlogPost({ data, pageContext, location }) {
               `}
             >
               {prev && (
-                <li>
+                <li key="before">
                   <span
                     role="img"
                     aria-label="back"
@@ -132,7 +132,7 @@ export default function BlogPost({ data, pageContext, location }) {
                 </li>
               )}
               {next && (
-                <li>
+                <li key="next">
                   <span
                     role="img"
                     aria-label="foward"
