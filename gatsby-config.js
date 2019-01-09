@@ -145,6 +145,7 @@ module.exports = {
                   }
                 }
               }
+            }
             `,
             output: "/rss.xml",
             title: "Clau Kishin's Blog RSS Feed"
