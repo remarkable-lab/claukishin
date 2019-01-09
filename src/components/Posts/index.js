@@ -10,7 +10,7 @@ export default ({ posts }) => (
         <article
           style={{
             marginBottom: rhythm(2),
-            padding: last ? "1rem" : 0,
+            padding: last ? "1rem" : "0 1rem",
             background: last ? "#efefef" : "white",
             borderRadius: last ? "7px" : 0
           }}
