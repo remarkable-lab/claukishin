@@ -49,10 +49,11 @@ const navList = css`
   list-style: none;
   padding: 0;
   margin: 0;
+  height: 55px;
   li {
     display: inline-block;
   }
-  li:not(:last-child) {
+  & > li:not(:last-child) {
     margin-right: 1em;
   }
 `;

@@ -5,51 +5,68 @@ import addToMailchimp from "gatsby-plugin-mailchimp";
 
 class Signup extends React.Component {
   state = {
-    email: "hanslgarcia@gmail.com",
-    name: "Hans",
-    lastName: "Lebon",
+    email: "",
+    name: "",
+    lastName: "",
     error: false,
-    msg: ""
+    msg: "",
+    canSubmitForm: false
   };
 
   handleOnChange = e => {
     const { name, value } = e.target;
+    let { canSubmitForm } = this.state;
+    if (name === "email") {
+      canSubmitForm = this.isValidEmail(value);
+    }
     this.setState({
-      [name]: value
+      [name]: value,
+      canSubmitForm
     });
   };
 
   handleOnSubmit = async e => {
     e.preventDefault();
+    const { email, name, lastName, canSubmitForm } = this.state;
+    if (!canSubmitForm) {
+      this.setState({
+        error: true,
+        msg: `Ingrese un email valido`
+      });
+      return;
+    }
     try {
-      const { email, name, lastName } = this.state;
-
       const { result, msg } = await addToMailchimp(email, {
         PATHNAME: this.props.pathname,
         FNAME: name,
         LNAME: lastName
       });
-      console.log(result);
       if (result === "error") {
         this.setState({
           error: true,
           msg: msg.split("<")[0]
         });
       } else {
-        navigate(`/confirm`, { state: { name } });
+        navigate(`/confirmar`, { state: { name } });
       }
     } catch (error) {
-      console.log(error);
+      this.setState({
+        error: true,
+        msg: "Ups! Hemos tenido un problema, intentalo de nuevo"
+      });
     }
   };
 
+  isValidEmail = email => {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  };
+
   render() {
-    console.log(this.props.pathname);
-    const { name, lastName, email } = this.state;
+    const { name, lastName, email, error, msg, canSubmitForm } = this.state;
     return (
       <form
         onSubmit={this.handleOnSubmit}
-        noValidate
         css={css`
           display: flex;
           justify-content: center;
@@ -61,31 +78,28 @@ class Signup extends React.Component {
             width: 100%;
             display: flex;
             flex-direction: column;
-            padding: 30px 40px;
+            padding: 30px 20px;
             border: 1px solid #e4e3e3;
-            transition: box-shadow 100ms ease-in-out;
+            box-shadow: 1px 2px 10px #e4e3e3;
             @media (min-width: 620px) {
               flex-direction: row;
               justify-content: space-between;
-              div:nth-of-type(1) {
+              & > div:nth-of-type(1) {
                 width: 45%;
                 margin: auto;
+                margin-top: 0;
                 padding: 20px;
               }
-              div:nth-of-type(2) {
+              & > div:nth-of-type(2) {
                 width: 55%;
                 padding: 20px;
               }
-            }
-            &:hover {
-              box-shadow: 1px 2px 10px #e4e3e3;
-              transition: box-shadow 100ms ease-in-out;
             }
           `}
         >
           <div id="newsletter">
             <h3 style={{ margin: 0, marginBottom: "1rem" }}>
-              Unete para estar en lo último
+              Únete a mi Newsletter
             </h3>
             <p style={{ marginTop: "5px" }}>
               Suscribete para recibir mi contenido por email y no te pierdas
@@ -112,6 +126,7 @@ class Signup extends React.Component {
               name="name"
               value={name}
               onChange={this.handleOnChange}
+              required
             />
             <input
               type="text"
@@ -121,11 +136,12 @@ class Signup extends React.Component {
               onChange={this.handleOnChange}
             />
             <input
-              type="text"
+              type="email"
               placeholder="Email"
               name="email"
               value={email}
               onChange={this.handleOnChange}
+              required
             />
             <button
               type="submit"
@@ -145,6 +161,7 @@ class Signup extends React.Component {
             >
               Suscribirse
             </button>
+            {error && <div style={{ color: "red" }}>{msg}</div>}
           </div>
         </div>
       </form>

@@ -3,7 +3,6 @@ import React from "react";
 import Layout, { Content } from "../components/layout";
 
 function Confirm(props) {
-  console.log(props);
   const { location } = props;
   // const siteTitle = get(this.props, "data.site.siteMetadata.title");
   return (

@@ -3,7 +3,8 @@ module.exports = {
     title: `ClauKishin`,
     subtitle: `El Blog de Clau`,
     description: `Tips financieros`,
-    author: `Clau`
+    author: `Clau`,
+    siteUrl: `https://claukishin.com/`
   },
   pathPrefix: `/`,
   plugins: [
@@ -61,7 +62,7 @@ module.exports = {
       resolve: "gatsby-plugin-mailchimp",
       options: {
         endpoint:
-          "https://hanslebon.us7.list-manage.com/subscribe/post?u=087fd9c746a82ae9dfa71b0df&amp;id=fbb89f01e9" // see instructions section below
+          "https://hanslebon.us7.list-manage.com/subscribe/post?u=087fd9c746a82ae9dfa71b0df&amp;id=28d11bc298" // see instructions section below
       }
     },
     {
@@ -81,6 +82,75 @@ module.exports = {
         // Any additional create only fields (optional)
         sampleRate: 5,
         siteSpeedSampleRate: 10
+      }
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) =>
+              allMarkdownRemark.edges.map(edge => {
+                const { siteUrl } = site.siteMetadata;
+                const postText = `
+                <div style="margin-top=55px; font-style: italic;">(Este articulo fue publicado en mi blog claukishin.com. Puedes leer online <a href="${siteUrl +
+                  edge.node.fields.slug}">clicking here</a>.)</div>
+              `;
+
+                let { html } = edge.node;
+                html = html
+                  .replace(/href="\//g, `href="${siteUrl}/`)
+                  .replace(/src="\//g, `src="${siteUrl}/`)
+                  .replace(/"\/static\//g, `"${siteUrl}/static/`)
+                  .replace(/,\s*\/static\//g, `,${siteUrl}/static/`);
+
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": html + postText }]
+                });
+              }),
+            query: `
+              {
+                allMarkdownRemark(
+                  limit: 1000,
+                  sort: { order: DESC, fields: [frontmatter___date] }
+                ) {
+                  edges {
+                    node {
+                      html
+                      frontmatter {
+                        title
+                        date
+                      }
+                      excerpt
+                      timeToRead
+                      fields {
+                        slug
+                      }
+                  }
+                }
+              }
+            }
+            `,
+            output: "/rss.xml",
+            title: "Clau Kishin's Blog RSS Feed"
+          }
+        ]
       }
     }
   ]

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import { getDate } from "../../utils/helpers";
 import { rhythm } from "../../utils/typography";
+import Tags from "../Tags";
 
 export default ({ posts }) => (
   <ul style={{ listStyle: "none", marginLeft: 0 }}>
@@ -10,7 +11,7 @@ export default ({ posts }) => (
         <article
           style={{
             marginBottom: rhythm(2),
-            padding: last ? "1rem" : 0,
+            padding: last ? "1rem" : "0 1rem",
             background: last ? "#efefef" : "white",
             borderRadius: last ? "7px" : 0
           }}
@@ -50,6 +51,9 @@ export default ({ posts }) => (
             </small>
           </header>
           <p>{node.excerpt}</p>
+          <div>
+            <Tags data={node.frontmatter.tags} />
+          </div>
         </article>
       </li>
     ))}
