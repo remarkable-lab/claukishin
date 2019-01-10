@@ -52,7 +52,7 @@ const navList = css`
   li {
     display: inline-block;
   }
-  li:not(:last-child) {
+  & > li:not(:last-child) {
     margin-right: 1em;
   }
 `;
