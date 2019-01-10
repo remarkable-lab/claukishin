@@ -5,6 +5,7 @@ import { DiscussionEmbed } from "disqus-react";
 import { css } from "@emotion/core";
 import Layout, { Content } from "../components/layout";
 import Signup from "../components/SignUp";
+import SEO from "../components/Seo";
 import { getDate } from "../utils/helpers";
 
 export default function BlogPost({ data, pageContext, location }) {
@@ -17,6 +18,10 @@ export default function BlogPost({ data, pageContext, location }) {
   };
   return (
     <Layout location={location} maxWidth="700px">
+      <SEO
+        title={`Clau blog | ${post.frontmatter.title}`}
+        keywords={[`emprendeder`, `finanzas`, `finanzas`]}
+      />
       <Content maxWidth="700px">
         <article>
           <header
