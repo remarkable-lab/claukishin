@@ -49,6 +49,7 @@ const navList = css`
   list-style: none;
   padding: 0;
   margin: 0;
+  height: 55px;
   li {
     display: inline-block;
   }
