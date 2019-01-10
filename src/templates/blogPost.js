@@ -85,13 +85,6 @@ export default function BlogPost({ data, pageContext, location }) {
               background-color: white;
               padding: 1rem;
               margin: 2rem 0;
-              border: 2px dashed #c641c9;
-              box-shadow: 0 2px 2px #e6e6e6;
-              transition: box-shadow 300ms;
-              &:hover {
-                box-shadow: 0 2px 15px #e6e6e6;
-                transition: box-shadow 300ms;
-              }
               & a {
                 color: gray;
                 &:hover {
@@ -105,7 +98,7 @@ export default function BlogPost({ data, pageContext, location }) {
                 margin-bottom: 0;
                 margin-left: 0;
                 list-style: none;
-                li:last-child {
+                & > li:last-child {
                   margin-bottom: 0;
                 }
               `}
@@ -119,7 +112,7 @@ export default function BlogPost({ data, pageContext, location }) {
                       margin-right: 8px;
                     `}
                   >
-                    ⬅️
+                    Anterior ⬅️ :
                   </span>
                   <Link
                     to={prev.fields.slug}
@@ -140,7 +133,7 @@ export default function BlogPost({ data, pageContext, location }) {
                       margin-right: 8px;
                     `}
                   >
-                    ➡️
+                    Siguiente ➡️ :
                   </span>
                   <Link
                     to={next.fields.slug}
