@@ -41,9 +41,7 @@ class Signup extends React.Component {
         FNAME: name,
         LNAME: lastName
       });
-      console.log(result);
       if (result === "error") {
-        console.log(msg);
         this.setState({
           error: true,
           msg: msg.split("<")[0]
@@ -56,7 +54,6 @@ class Signup extends React.Component {
         error: true,
         msg: "Ups! Hemos tenido un problema, intentalo de nuevo"
       });
-      console.log(error);
     }
   };
 
@@ -66,7 +63,6 @@ class Signup extends React.Component {
   };
 
   render() {
-    console.log(this.props.pathname);
     const { name, lastName, email, error, msg, canSubmitForm } = this.state;
     return (
       <form

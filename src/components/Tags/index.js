@@ -9,7 +9,6 @@ const colors = [
 ];
 
 function Tags({ data: tags }) {
-  console.log(Math.random() * (3 - 0) + 0);
   return (
     <ul style={{ display: "flex ", listStyleType: "none" }}>
       {tags.map(tag => (
