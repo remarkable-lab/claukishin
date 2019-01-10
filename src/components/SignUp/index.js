@@ -43,7 +43,7 @@ class Signup extends React.Component {
       });
       console.log(result);
       if (result === "error") {
-        console.error(msg);
+        console.log(msg);
         this.setState({
           error: true,
           msg: msg.split("<")[0]
@@ -84,7 +84,7 @@ class Signup extends React.Component {
             flex-direction: column;
             padding: 30px 20px;
             border: 1px solid #e4e3e3;
-            transition: box-shadow 100ms ease-in-out;
+            box-shadow: 1px 2px 10px #e4e3e3;
             @media (min-width: 620px) {
               flex-direction: row;
               justify-content: space-between;
@@ -99,15 +99,11 @@ class Signup extends React.Component {
                 padding: 20px;
               }
             }
-            &:hover {
-              box-shadow: 1px 2px 10px #e4e3e3;
-              transition: box-shadow 100ms ease-in-out;
-            }
           `}
         >
           <div id="newsletter">
             <h3 style={{ margin: 0, marginBottom: "1rem" }}>
-              Únete para estar en lo último
+              Únete a mi Newsletter
             </h3>
             <p style={{ marginTop: "5px" }}>
               Suscribete para recibir mi contenido por email y no te pierdas
