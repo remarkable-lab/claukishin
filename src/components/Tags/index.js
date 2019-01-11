@@ -10,7 +10,7 @@ const colors = [
 
 function Tags({ data: tags }) {
   return (
-    <ul style={{ display: "flex ", listStyleType: "none" }}>
+    <ul style={{ display: "flex ", listStyleType: "none", marginLeft: 0 }}>
       {tags.map(tag => (
         <li
           key={tag}
