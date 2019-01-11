@@ -20,7 +20,7 @@ export default function BlogPost({ data, pageContext, location }) {
     <Layout location={location} maxWidth="700px">
       <SEO
         title={`Clau blog | ${post.frontmatter.title}`}
-        keywords={[`emprendeder`, `finanzas`, `finanzas`]}
+        keywords={[`finanzas`, ...post.frontmatter.tags]}
       />
       <Content maxWidth="700px">
         <article>
