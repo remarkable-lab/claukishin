@@ -11,9 +11,10 @@ export default ({ posts }) => (
         <article
           style={{
             marginBottom: rhythm(2),
-            padding: last ? "1rem" : "0 1rem",
-            background: last ? "#efefef" : "white",
-            borderRadius: last ? "7px" : 0
+            padding: "1rem",
+            background: last ? "#f8f8f8" : "white",
+            border: last ? "1px solid #cecece" : "none",
+            boxShadow: last ? "15px 15px 15px #e8e8e8" : "none"
           }}
           className="article"
         >
@@ -22,7 +23,7 @@ export default ({ posts }) => (
               marginBottom: `${rhythm(2 / 4)}`
             }}
           >
-            <h3
+            <h2
               style={{
                 margin: "1rem 0"
               }}
@@ -36,7 +37,7 @@ export default ({ posts }) => (
               >
                 <span>{node.frontmatter.title}</span>
               </Link>
-            </h3>
+            </h2>
             <small style={{ fontSize: "16px" }}>
               <span
                 style={{
