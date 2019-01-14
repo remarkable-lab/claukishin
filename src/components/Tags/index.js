@@ -20,14 +20,11 @@ function Tags({ data: tags }) {
             cursor: pointer;
             border: 1px solid #ff5722;
             box-shadow: 1px 3px 10px #c2c1c1;
-            transition: color 300ms ease-in, border 300sm ease-in,
-              background 300ms ease-in;
+            transition: color 300ms ease-in, background 300ms ease-in;
             &:hover {
               color: white;
               background: #ff5722;
-              border-color: white;
-              transition: color 300ms ease-in, border 300ms ease-in,
-                background 300ms ease-in;
+              transition: color 300ms ease-in, background 300ms ease-in;
             }
           `}
         >
