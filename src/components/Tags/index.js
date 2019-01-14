@@ -1,29 +1,32 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-const colors = [
-  `linear-gradient(to right, #FF9800, #ef8739)`,
-  `linear-gradient(to right, #2196F3, #03A9F4)`,
-  `linear-gradient(to right, #E91E63, #9C27B0)`,
-  `linear-gradient(to right, #4CAF50, #8BC34A)`
-];
+import { css } from "@emotion/core";
 
 function Tags({ data: tags }) {
   return (
-    <ul style={{ display: "flex ", listStyleType: "none" }}>
+    <ul style={{ display: "flex ", listStyleType: "none", marginLeft: 0 }}>
       {tags.map(tag => (
         <li
           key={tag}
-          style={{
-            padding: "5px 12px",
-            margin: "0 10px 0 0",
-            borderRadius: "7px",
-            fontSize: "12px",
-            background: colors[parseInt(Math.random() * (3 - 0) + 0, 10)],
-            color: "white",
-            cursor: "pointer",
-            boxShadow: `1px 2px 7px #d8d8d8`
-          }}
+          style={{}}
+          css={css`
+            padding: 5px 12px;
+            margin: 0 10px 0 0;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 400;
+            background: white;
+            color: gray;
+            cursor: pointer;
+            border: 1px solid #ff5722;
+            box-shadow: 1px 3px 10px #c2c1c1;
+            transition: color 300ms ease-in, background 300ms ease-in;
+            &:hover {
+              color: white;
+              background: #ff5722;
+              transition: color 300ms ease-in, background 300ms ease-in;
+            }
+          `}
         >
           {`#${tag}`}
         </li>
