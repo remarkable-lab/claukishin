@@ -30,7 +30,11 @@ export default function BlogPost({ data, pageContext, location }) {
             `}
           >
             <h1>{post.frontmatter.title}</h1>
-            <small>
+            <small
+              css={css`
+                font-size: 16px;
+              `}
+            >
               <span
                 css={css`
                   margin-right: 0.5rem;
@@ -52,6 +56,7 @@ export default function BlogPost({ data, pageContext, location }) {
           <div
             dangerouslySetInnerHTML={{ __html: post.html }}
             css={css`
+              font-size: 18px;
               & img {
                 display: flex;
                 width: 100%;
